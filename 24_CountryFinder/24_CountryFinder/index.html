@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Country Finder</h2>
+
+<input id="name" placeholder="Country">
+<button onclick="search()">Search</button>
+
+<p id="out"></p>
+
+<script>
+async function search() {
+    let n = document.getElementById("name").value;
+
+    try {
+        let r = await fetch(
+            "https://restcountries.com/v3.1/name/" + n
+        );
+
+        if (!r.ok) throw new Error("Country not found");
+
+        let c = (await r.json())[0];
+
+        document.getElementById("out").innerHTML =
+            "Country: " + c.name.common +
+            "<br>Capital: " + (c.capital?.[0] || "N/A") +
+            "<br>Population: " + c.population;
+    }
+    catch(e) {
+        document.getElementById("out").innerHTML = e.message;
+    }
+}
+</script>
+
+</body>
+</html>
