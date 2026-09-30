@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Event</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            color: black;
+        }
+
+        .event {
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            background: #eee;
+        }
+
+        .event:hover {
+            transform: scale(1.05);
+        }
+
+        .dark {
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body id="page">
+
+    <h1>College Tech Fest</h1>
+    <p>Join us for exciting technical events!</p>
+
+    <div class="event">Coding Challenge</div>
+    <div class="event">Robo Race</div>
+    <div class="event">Web Design</div>
+
+    <button onclick="changeTheme()">Change Theme</button>
+
+    <script>
+        function changeTheme() {
+            document.getElementById("page")
+                    .classList.toggle("dark");
+        }
+    </script>
+
+</body>
+</html>
