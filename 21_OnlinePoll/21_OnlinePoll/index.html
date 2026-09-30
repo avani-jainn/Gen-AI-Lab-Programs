@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Favourite Activity</h2>
+
+<button onclick="vote('Coding')">Coding</button>
+<button onclick="vote('Photography')">Photography</button>
+<button onclick="vote('Robotics')">Robotics</button>
+
+<p id="out"></p>
+
+<script>
+function vote(x) {
+    document.getElementById("out").innerHTML =
+        "Selected: " + x;
+}
+</script>
+
+</body>
+</html>
